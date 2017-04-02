@@ -1,0 +1,86 @@
+{
+
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "manifest_version": 2,
+
+  "name": "Getting started example",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    //"default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+   "background": {
+      "scripts": ["jquery-3.1.1.min.js", "netflixQuery.js"],
+    "persistent": false
+   },
+  /*"background": {
+    "scripts": [ "thirdParty/jquery.js", "background.js" ]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://*.google.com/*" ],
+      "js": [
+        "jquery.min.js",
+        "netflixQuery.js"
+      ]
+    }
+  ],*/
+
+  "permissions": [
+    "activeTab",
+    "http://ajax.googleapis.com/*",
+    "https://ajax.googleapis.com/*",
+    "power",
+    "tabs",
+    "http://movies.netflix.com/",
+    "http://youtube.com/",
+    "http://*.hulu.com/",
+	"system.display"
+  ]//,
+  /*
+  "content_scripts": [
+    {
+      //"css": [ "css/inject/inject.css", "lib/fontawesome/css/font-awesome.min.css" ],
+      "js": [ "jquery-3.1.1.min.js" ], //, "lib/underscore/underscore-min.js", "lib/backbone/backbone-min.js", "lib/handlebars/handlebars.runtime.min.js", "js/inject/inject.js", "js/model/Model.js" ],
+      "matches": [ "*://*.youtube.com/*", "*://*.twitch.tv/*", "*://*.hulu.com/*", "*://*.netflix.com/*" ],
+      "run_at": "document_start"
+    }//, 
+	{
+      "all_frames": false,
+    "css": [ ] ,//"css/inject/youtube.css" ],
+    //"js": [ "js/inject/youtube/youtube.js", "js/inject/youtube/youtube.onload.js" ],
+      "matches": [ "*://*.youtube.com/*", "*://*.twitch.tv/*" ],
+      "run_at": "document_start"
+   }, 
+    
+	  {
+      "all_frames": false,
+      //"css": [ "css/inject/netflix.css" ],
+      "js": [ "netflixQuery.js" ], //"js/inject/netflix/netflix.js", "js/inject/netflix/netflix.onload.js", "js/misc/channels4netflix.js" ],
+      "matches": [ "*://*.netflix.com/*" ],
+      "run_at": "document_end"
+    }*/
+    /*,{
+      "all_frames": false,
+      "css": [ ],
+      //"js": [ "js/inject/hulu/hulu.js" ],
+      "matches": [ "*://*.hulu.com/stand_alone*" ],
+      "run_at": "document_start"
+    }*/
+  /* ]
+
+ "content_scripts": [
+    {
+    "all_frames": false,
+    "matches": ["*://*.netflix.com/*"],
+    "exclude_matches": [],
+      "js": [
+        "jquery-3.1.1.min.js"
+      ]
+    }
+  ]*/
+}
+
